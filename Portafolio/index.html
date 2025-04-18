@@ -89,26 +89,59 @@
                         </ul>
                     </div>
                     <div class="contact-method">
-                        <h3>Contacto Directo</h3>
-                        <ul class="direct-contact">
-                            <li>
-                                <img src="assets/img/logotelefono.png" alt="Gmail" class="contact-icon">
-                                <br>
-                                </span>marias2024@alu.uct.cl</span>
-                            </li>
-                            <li>
-                                <img src="assets/img/logotelefono.jpg" alt="Teléfono" class="contact-icon">
-                                <br>
-                                <span>+56 9 3539 6780</span>
-                            </li>
-                            <li>
-                                <img src="assets/img/logotelefono.webp" alt="Ubicación" class="contact-icon">
-                                <br>
-                                <span>Temuco, Chile</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                        <h3>Contactate con Marcelo</h3>
+                        <div>
+                            <img src="https://via.placeholder.com/800x300" alt="Encabezado de la página" style="width:100%; height:auto;">
+                        </div>
+                    
+                        <!-- Mensaje de resultado (aparecerá después de enviar el formulario) -->
+                        <p id="mensajeResultado"></p>
+                    
+                        <!-- Formulario al final de la página -->
+                        <h2>Formulario de Contacto</h2>
+                        <form id="formularioContacto">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" required><br><br>
+                    
+                            <label for="email">Correo electrónico:</label>
+                            <input type="email" id="email" name="email" required><br><br>
+                    
+                            <button type="submit">Enviar</button>
+                        </form>
+                    
+                        <script>
+                            // Obtener el formulario y el mensaje de resultado
+                            const formulario = document.getElementById("formularioContacto");
+                            const mensajeResultado = document.getElementById("mensajeResultado");
+                    
+                            // Función para manejar el envío del formulario
+                            formulario.addEventListener("submit", function(event) {
+                                event.preventDefault();  // Evitar que el formulario se envíe de la forma tradicional (sin recargar)
+                    
+                                // Obtener los valores de los campos
+                                const nombre = document.getElementById("nombre").value;
+                                const email = document.getElementById("email").value;
+                    
+                                // Verificar que los campos no estén vacíos
+                                if (!nombre || !email) {
+                                    mensajeResultado.innerHTML = "Por favor, completa todos los campos.";
+                                    mensajeResultado.style.color = "red";
+                                    return; // No continuar si falta algún campo
+                                }
+                    
+                                // Validación del correo: comprobar que contenga '@'
+                                const emailRegex = /\S+@\S+\.\S+/; // Expresión regular básica para validar correo
+                                if (!emailRegex.test(email)) {
+                                    mensajeResultado.innerHTML = "Por favor, ingresa un correo electrónico válido (debe contener '@').";
+                                    mensajeResultado.style.color = "red";
+                                    return;
+                                }
+                    
+                                // Si todos los campos son válidos, mostrar un mensaje de éxito
+                                mensajeResultado.innerHTML = `¡Gracias por tu contacto, ${nombre}! Hemos recibido tu correo: ${email}.`;
+                                mensajeResultado.style.color = "green";
+                            });
+                        </script>
             </section>
             <p class="copyright">&copy; 2024 Marcelo Ignacio Arias Lagos. Todos los derechos reservados.</p>
         </footer>
