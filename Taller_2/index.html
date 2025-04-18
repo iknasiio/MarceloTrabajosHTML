@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarceloAriasweb</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">MarceloAriasweb</div>
+        <nav>
+            <ul>
+                <li><a href="#Inicio">Inicio</a></li>
+                <li><a href="#Contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección principal -->
+    <section id="Inicio" class="presentacion">
+        <img src="css/img/logouct_blanco.png" alt="Imagen principal">
+        <div class="textopresentacion">
+            <h1>Bienvenido a MarceloAriasweb</h1>
+            <p>Contáctame para mayor información.</p>
+        </div>
+    </section>
+
+    <!-- Formulario de contacto -->
+    <section id="Contacto" class="formularioseccion">
+        <h2>Contacto</h2>
+        <form id="formulario">
+            <label for="Nombre">Nombre:</label>
+            <input type="text" id="Nombre" name="Nombre" required>
+            <span id="errorNombre" class="mensajeerror"></span>
+
+            <label for="Email">Email:</label>
+            <input type="email" id="Email" name="Email" required>
+            <span id="errorEmail" class="mensajeerror"></span>
+
+            <label for="Mensaje">Mensaje:</label>
+            <textarea id="Mensaje" name="Mensaje" required></textarea>
+            <span id="errorMensaje" class="mensajeerror"></span>
+
+            <button type="submit">Enviar</button>
+        </form>
+        <p id="mensajeexito" class="mensajeexito"></p>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>© 2025 MarceloAriasweb</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
